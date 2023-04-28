@@ -17,17 +17,18 @@ fetch('https://memegen-link-examples-upleveled.netlify.app/')
   .then((res) => res.text())
   .then((body) => {
     // Fetch first 10 img-contents from img URL and save them
-    for (let i = 0; i < 10; i++) {
-      const currentImg = $('img', body)[i].attribs.src;
+    for (let i = 1; i < 11; i++) {
+      const image = $('img', body)[i].attribs.src;
 
-      fetch(currentImg).then((res) => {
-        const path = './memes/' + '0' + (i + 1) + '.jpg';
-        //.split('?')[0].split('/').slice(4).join('_');
+      //  Put to memes folder and rename them from 01.jpg
+      fetch(image).then((res) => {
+        let path = './memes/0' + i + '.jpg';
+        if (i === 10) {
+          path = './memes/' + i + '.jpg';
+        }
 
         const dest = createWriteStream(path);
         res.body.pipe(dest);
       });
     }
-
-    console.log('Images downloaded successfully!');
   });
