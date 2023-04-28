@@ -2,17 +2,15 @@
 
 Create a cli (Command Line Interface) application that scrapes the current version of this website:
 
-
-
 ...and saves the first 10 images into a folder called "memes" within the directory of the new project. The image files should be named with a number with a leading zero, eg. 01.jpg, 02.jpg, etc.
 
 ## TODO
 
-- [] Command line steps (setup for Node.js project)
-- [] Set up a `.gitignore` with the `memes` folder
-- [] Create a folder called `"memes"`
-- [] Access the website (send a request to the website / "fetching")
-- [ ] Search for the `section` in the string of HTML that comes back (in the "response") from the website
+- [x] Command line steps (setup for Node.js project)
+- [x] Set up a `.gitignore` with the `memes` folder
+- [x] Create a folder called `"memes"`
+- [x] Access the website (send a request to the website / "fetching")
+- [x] Search for the `section` in the string of HTML that comes back (in the "response") from the website
 - [ ] Search for the first 10 image sources in the `section`
   - [ ] Two options
     - [ ] One option: `.jpg` - this is in the HTML code of the website
